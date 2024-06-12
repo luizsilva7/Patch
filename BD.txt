@@ -1,0 +1,38 @@
+CREATE DATABASE db_produtos;
+USE db_produtos;
+
+DROP TABLE products;
+
+CREATE TABLE products (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome_produtos VARCHAR(255) NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    image TEXT NOT NULL
+);
+
+INSERT INTO products (nome_produtos, price, image) VALUES
+('Camisa Brasil Retro 1994 Amarelo Masculina', 199.90, 'https://images.tcdn.com.br/img/img_prod/657285/camisa_brasil_retro_1994_amarelo_masculina_2079_1_0bb10da965a4971334aa1b3f40bbfe1c.jpg'),
+('Camisa Alemanha Retro 1990', 159.90, 'https://images.tcdn.com.br/img/img_prod/657285/camisa_alemanha_retro_1990_525_3_20220408102817.jpg'),
+('Camisa França Retro 1998 Masculina', 189.90, 'https://images.tcdn.com.br/img/img_prod/657285/camisa_franca_retro_1998_masculina_1183_1_fd32d9238796dcf97a1b6f8b33581e52_20220408102743.jpg'),
+('Camisa Argentina Retro Tricampeã Masculina', 199.90, 'https://images.tcdn.com.br/img/img_prod/657285/camisa_argentina_retro_tricampea_masculina_2605_1_6f026c8ffc007e285f239d3ba72de2cc.jpg'),
+('Camisa Polo Barcelona Retro 1899 Masculina', 159.90, 'https://images.tcdn.com.br/img/img_prod/657285/camisa_barcelona_retro_1899_541_1_395209bb760b26cd8dacecc11f667904.jpg'),
+('Camisa Real Madrid Retro nº 10 Masculina', 199.90, 'https://images.tcdn.com.br/img/img_prod/657285/camisa_real_madrid_retro_no_10_masculina_911_1_20220408102742.jpg'),
+('Camisa Milan Retro Anos 80', 109.90, 'https://images.tcdn.com.br/img/img_prod/657285/camisa_milan_retro_anos_80_545_1_20220408102737.jpg'),
+('Camisa Bayern De Munique Manga Azul Masculina', 99.90, 'https://images.tcdn.com.br/img/img_prod/657285/camisa_bayern_de_munique_manga_azul_masculina_2503_1_60c7d2313ddc9004f9198f6ca8d4ebcf.jpg'),
+('Camisa Retro Corinthians Democracia 1982 Masculina', 109.90, 'https://images.tcdn.com.br/img/img_prod/657285/camisa_retro_corinthians_democracia_1982_masculina_441_1_20220408102844.jpg'),
+('Camisa Palmeiras Vintage Eterna Academia Masculina', 99.90, 'https://images.tcdn.com.br/img/img_prod/657285/camisa_palmeiras_vintage_eterna_academia_masculina_811_1_20220408102712.jpg'),
+('Camisa Vasco da Gama Reign Masculina', 129.90, 'https://images.tcdn.com.br/img/img_prod/657285/camisa_vasco_da_gama_reign_masculina_1843_1_7b64fac39e24a7634dd3b806e099aace.jpg'),
+('Camisa Flamengo Zico Retro Libertadores', 399.90, 'https://images.tcdn.com.br/img/img_prod/657285/camisa_flamengo_zico_retro_libertadores_225_1_20220408102807.jpg');
+    -- GET
+    SELECT * FROM products;
+    -- POST
+    INSERT INTO tbl_usuarios (nome, email, telefone, dataNascimento, senha, papel) VALUES
+    ('Robson', 'r.gmail.com', '190', '1984-11-09','r123', 'admin');
+    -- PUT
+    UPDATE tbl_usuarios 
+    SET nome = 'Lucas', email = 'l@gmail.com', telefone = '156', dataNascimento = '2000-04-04', senha='123', papel = 'usuario'
+    where id = 11;
+    -- DELETE
+    DELETE FROM tbl_usuarios
+    WHERE id = 11;
+    ALTER TABLE products convert to character set utf8mb4 collate utf8mb4_general_ci;
