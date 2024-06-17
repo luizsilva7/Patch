@@ -56,8 +56,6 @@
             $dados = json_decode(file_get_contents('php://input'));
             $id = $dados->id;
 
-            $u = receberDados();
-
             $resp = editar_usuario_parcialmente($conexao, $campo, $novo_valor, $id);
 
             $in = new Resposta('', '');
