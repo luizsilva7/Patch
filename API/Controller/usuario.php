@@ -54,16 +54,20 @@
              break;
          case 'PATCH':
             $dados = json_decode(file_get_contents('php://input'));
-            $query = $dados->query;
+            $id = $dados->id;
 
-            $resp = editar_usuario_parcialmente($conexao, $query);
-            $resposta = new Resposta('','');
-            if($resp){
-                $resposta = criarResposta(204, 'Atualizado com sucesso');
-            } else{
-               $resposta = criarResposta('400', 'Não atualizado');
-            }
-             echo 'Fiz um PATCH';
+            $u = receberDados();
+
+            $resp = editar_usuario_parcialmente($conexao, $campo, $novo_valor, $id);
+
+            $in = new Resposta('', '');
+                if($resp){
+                   $in = criarResposta('204', 'Atualizado com sucesso');
+                } else {
+                  $in = criarResposta('400', 'Não atualizado');
+                }
+
+            echo json_encode($in);
              break;
          case 'DELETE':
             $dados = json_decode(file_get_contents('php://input'));

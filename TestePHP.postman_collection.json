@@ -74,7 +74,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "    {\r\n        \"id\": \"12\",\r\n        \"name\": \"Tens\",\r\n        \"price\": \"200,99\",\r\n        \"image\": \"https://www.dustercalcados.com.br/cdn/shop/products/559eb059-07bd-4945-a45b-e767f6b46f57.jpg?v=1650977757\"\r\n    }",
+					"raw": "    {\r\n        \"id\": \"12\",\r\n        \"nome_produtos\": \"Tens\",\r\n        \"price\": \"200,99\",\r\n        \"image\": \"https://www.dustercalcados.com.br/cdn/shop/products/559eb059-07bd-4945-a45b-e767f6b46f57.jpg?v=1650977757\"\r\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -99,10 +99,28 @@
 		{
 			"name": "requestPATCH",
 			"request": {
-				"method": "GET",
+				"method": "PATCH",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"campo\": \"price\",\r\n    \"novo_valor\": \"500.000\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": ""
+					"raw": "http://localhost/api/Controller/usuario.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"Controller",
+						"usuario.php"
+					]
 				}
 			},
 			"response": []

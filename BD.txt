@@ -35,4 +35,14 @@ INSERT INTO products (nome_produtos, price, image) VALUES
     -- DELETE
     DELETE FROM tbl_usuarios
     WHERE id = 11;
+    
+   -- PATCH 
+   
+   UPDATE products 
+   SET 
+   nome_produtos = coalesce('', nome_produtos),
+   price = coalesce (199.90, price),
+   image = coalesce ('', image)
+   WHERE id=1;
+   
     ALTER TABLE products convert to character set utf8mb4 collate utf8mb4_general_ci;
